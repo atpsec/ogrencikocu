@@ -18,6 +18,6 @@ Bu `main` sürümünün hedefi: velilerin ücretsiz PDF rehbere Brevo double opt
 
 ## Yayın
 
-Cloudflare hesabınızda bu depoyu Workers projesine bağlayıp derleme komutunu `npx wrangler deploy` olarak ayarlayın. Kaynak depodaki dağıtım bağlantısı fork'a otomatik taşınmaz. Alternatif olarak Cloudflare yetkili bir ortamda aynı komutu çalıştırın. `wrangler.jsonc` statik `site/` klasörünü yayınlar.
+Kaynak depodaki Cloudflare bağlantısı fork'a otomatik taşınmaz. Bu fork'ta `.github/workflows/deploy.yml`, `main` dalına push yapıldığında veya elle tetiklendiğinde Workers'a yayın yapar. Fork'un GitHub Actions sırlarına Cloudflare Workers deploy yetkili `CLOUDFLARE_API_TOKEN` ve `CLOUDFLARE_ACCOUNT_ID` eklenmelidir; sırları depoya yazmayın. `wrangler.jsonc` statik `site/` klasörünü yayınlar. Canlı alan adı ve Workers projesi Cloudflare hesabında ayrıca doğrulanmalıdır.
 
 Yayın öncesi `impressum.html` ve `datenschutz.html` içindeki kimlik, iletişim ve gizlilik bilgilerini site sahibiyle doğrulayın. Brevo formunun double opt-in onay e-postası ve PDF teslim şablonunu Brevo hesabında test edin; bunlar depoda saklanmaz. Kayıt formu başarılı teslim iddiası göstermez; Brevo'nun yanıtına yönlendirir.
